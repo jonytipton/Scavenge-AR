@@ -1,0 +1,6 @@
+framework module Pods_Scavenge_AR_ {
+  umbrella header "Pods-Scavenge[AR]-umbrella.h"
+
+  export *
+  module * { export * }
+}
