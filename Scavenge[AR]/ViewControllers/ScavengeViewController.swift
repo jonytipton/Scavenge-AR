@@ -66,20 +66,8 @@ class ScavengeViewController: BaseViewController {
         switch (step) {
         case .prepare:
             mainButton.setTitle("Tap to start Session", for: .normal)
-            step = .createCloudAnchor
+            step = .lookForNearbyAnchors
             createLocationProvider()
-        case .createCloudAnchor:
-            ignoreMainButtonTaps = true
-            currentlyPlacingAnchor = true
-            saveCount = 0
-
-            startSession()
-            attachLocationProviderToSession()
-
-            // When you tap on the screen, touchesBegan will call createLocalAnchor and create a local ARAnchor.
-            // We will then put that anchor in the anchorVisuals dictionary with a special key and call CreateCloudAnchor when there is enough data for saving.
-            // CreateCloudAnchor will call onCloudAnchorCreated when its async method returns to move to the next step.
-            mainButton.setTitle("Tap on the screen to create an Anchor ☝️", for: .normal)
         case .lookForNearbyAnchors:
             ignoreMainButtonTaps = true
             stopSession()

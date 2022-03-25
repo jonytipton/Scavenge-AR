@@ -71,13 +71,13 @@ class CreateAnchorViewController: BaseViewController, UITextFieldDelegate {
         ignoreMainButtonTaps = false
         step = .stopWatcher
         
-        
+        /*
         if let cloudAnchorName = newCloudAnchor.appProperties["anchor-name"] {
             print ("Cloud Anchor Name: \(cloudAnchorName)")
         }
         else {
             print ("nope!")
-        }
+        }*/
         
         DispatchQueue.main.async {
             self.numAnchorsFound += 1
