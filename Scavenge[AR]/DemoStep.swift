@@ -4,6 +4,7 @@
 enum DemoStep: uint {
     case prepare                // prepare to start
     case createCloudAnchor      // the session will create a cloud anchor
+    case nameAnchor             // the session will prompt for anchor name
     case lookForAnchor          // the session will look for an anchor
     case lookForNearbyAnchors   // the session will look for nearby anchors
     case stopWatcher            // the watcher will stop looking for anchors

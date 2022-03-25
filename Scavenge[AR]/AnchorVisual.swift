@@ -7,10 +7,13 @@ class AnchorVisual {
         identifier = ""
         cloudAnchor = nil
         localAnchor = nil
+        anchorText = ""
     }
     
     var node : SCNNode? = nil
     var identifier : String
     var cloudAnchor : ASACloudSpatialAnchor? = nil
     var localAnchor : ARAnchor? = nil
+    var anchorText : String
+    var audioURL : String?
 }

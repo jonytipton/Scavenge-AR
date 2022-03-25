@@ -16,6 +16,7 @@ let failedColor = UIColor.red.withAlphaComponent(0.6)           // red when ther
 // Special dictionary key used to track an unsaved anchor
 let unsavedAnchorId = "placeholder-id"
 
+
 class BaseViewController: UIViewController, ARSCNViewDelegate, ASACloudSpatialAnchorSessionDelegate {
 
     // Set this string to the account ID provided for the Azure Spatial Anchors account resource.
@@ -39,6 +40,9 @@ class BaseViewController: UIViewController, ARSCNViewDelegate, ASACloudSpatialAn
     var cloudAnchor: ASACloudSpatialAnchor? = nil
     var localAnchor: ARAnchor? = nil
     var localAnchorCube: SCNBox? = nil
+    
+    var anchorName : String = "defaultName"
+ 
     
     var enoughDataForSaving = false     // whether we have enough data to save an anchor
     var currentlyPlacingAnchor = false  // whether we are currently placing an anchor
@@ -171,7 +175,7 @@ class BaseViewController: UIViewController, ARSCNViewDelegate, ASACloudSpatialAn
         for visual in anchorVisuals.values {
             if (visual.localAnchor == anchor) {
                 print("renderer:nodeForAnchor with local anchor \(anchor) at \(BaseViewController.matrixToString(value: anchor.transform))")
-                let cube = SCNBox(width: 0.2, height: 0.2, length: 0.2, chamferRadius: 0.0)
+                let cube = SCNBox(width: 0.2, height: 0.2, length: 0.2, chamferRadius: 0.5)
                 if (visual.identifier != unsavedAnchorId) {
                     cube.firstMaterial?.diffuse.contents = foundColor
                 }
@@ -179,6 +183,7 @@ class BaseViewController: UIViewController, ARSCNViewDelegate, ASACloudSpatialAn
                     cube.firstMaterial?.diffuse.contents = readyColor
                     localAnchorCube = cube
                 }
+                
                 visual.node = SCNNode(geometry: cube)
                 return visual.node
             }
@@ -256,11 +261,13 @@ class BaseViewController: UIViewController, ARSCNViewDelegate, ASACloudSpatialAn
         
         cloudAnchor = ASACloudSpatialAnchor()
         cloudAnchor!.localAnchor = localAnchor!
-        
+        print("Anchor Name: \(anchorName)")
+        self.cloudAnchor!.appProperties = ["anchor-name" : self.anchorName]
+
         // In this sample app we delete the cloud anchor explicitly, but you can also set it to expire automatically
-        let secondsInAWeek = 60 * 60 * 24 * 7
+        /*let secondsInAWeek = 60 * 60 * 24 * 7
         let oneWeekFromNow = Date(timeIntervalSinceNow: TimeInterval(secondsInAWeek))
-        cloudAnchor!.expiration = oneWeekFromNow
+        cloudAnchor!.expiration = oneWeekFromNow*/
         
         cloudSession!.createAnchor(cloudAnchor, withCompletionHandler: { (error: Error?) in
             if let error = error {
@@ -281,7 +288,7 @@ class BaseViewController: UIViewController, ARSCNViewDelegate, ASACloudSpatialAn
                 self.anchorVisuals[visual!.identifier] = visual
                 self.anchorVisuals.removeValue(forKey: unsavedAnchorId)
                 self.localAnchor = nil
-                
+                //print("Cloud Name: \(self.cloudAnchor!.appProperties["anchor-name"] ?? "NIL!")")
                 self.onCloudAnchorCreated()
             }
         })
@@ -393,7 +400,7 @@ class BaseViewController: UIViewController, ARSCNViewDelegate, ASACloudSpatialAn
             break
         case .located:
             let anchor = args.anchor!
-            print("Cloud Anchor found! Identifier: \(anchor.identifier ?? "nil"). Location: \(BaseViewController.matrixToString(value: anchor.localAnchor.transform))")
+            print("Cloud Anchor found! Identifier: \(anchor.identifier ?? "nil"). Location: \(BaseViewController.matrixToString(value: anchor.localAnchor.transform)) AnchorName: \(anchor.appProperties["anchor-name"] ?? "NO ANCHOR NAME!")")
             let visual = AnchorVisual()
             visual.cloudAnchor = anchor
             visual.identifier = anchor.identifier
