@@ -29,6 +29,19 @@ class ScavengeViewController: BaseViewController {
     var nearDeviceWatcher: ASACloudSpatialAnchorWatcher?
     var numAnchorsFound = 0
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Set the view's delegate
+        sceneView.delegate = self
+        //This call handles collision detection
+        sceneView.scene.physicsWorld.contactDelegate = self
+    }
+    
+    func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
+        print("contact happened")
+    }
+    
     override func onCloudAnchorCreated() {
         ignoreMainButtonTaps = false
         step = .lookForNearbyAnchors
@@ -119,8 +132,8 @@ class ScavengeViewController: BaseViewController {
 
     private func lookForAnchorsNearDevice() {
         let nearDevice = ASANearDeviceCriteria()!
-        nearDevice.distanceInMeters = 8.0
-        nearDevice.maxResultCount = 25
+        nearDevice.distanceInMeters = 1.0
+        nearDevice.maxResultCount = 35
 
         let criteria = ASAAnchorLocateCriteria()!
         criteria.nearDevice = nearDevice

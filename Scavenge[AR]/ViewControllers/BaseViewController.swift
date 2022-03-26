@@ -17,7 +17,7 @@ let failedColor = UIColor.red.withAlphaComponent(0.6)           // red when ther
 let unsavedAnchorId = "placeholder-id"
 
 
-class BaseViewController: UIViewController, ARSCNViewDelegate, ASACloudSpatialAnchorSessionDelegate {
+class BaseViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDelegate, ASACloudSpatialAnchorSessionDelegate {
 
     // Set this string to the account ID provided for the Azure Spatial Anchors account resource.
     let spatialAnchorsAccountId = "947d78a7-a9cf-424e-88f4-2da32b38a72c"
