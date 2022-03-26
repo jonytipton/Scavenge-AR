@@ -27,8 +27,10 @@ class ScavengeViewController: BaseViewController {
     var locationProvider: ASAPlatformLocationProvider?
 
     var nearDeviceWatcher: ASACloudSpatialAnchorWatcher?
-    var numAnchorsFound = 0
+    var numAnchorsFound = 0 //Use for found score
+    
 
+    /*
     override func onCloudAnchorCreated() {
         ignoreMainButtonTaps = false
         step = .lookForNearbyAnchors
@@ -37,11 +39,11 @@ class ScavengeViewController: BaseViewController {
             self.feedbackControl.isHidden = true
             self.mainButton.setTitle("Tap to start next Session & look for anchors near device", for: .normal)
         }
-    }
+    }*/
 
     override func onNewAnchorLocated(_ cloudAnchor: ASACloudSpatialAnchor) {
         ignoreMainButtonTaps = false
-        step = .stopWatcher
+        step = .stopWatcher //Activates on main button tap
 
         DispatchQueue.main.async {
             self.numAnchorsFound += 1
