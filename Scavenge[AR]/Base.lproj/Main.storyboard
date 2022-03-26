@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qj7-9D-09c">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -13,7 +13,7 @@
             <objects>
                 <viewController id="Qj7-9D-09c" userLabel="Menu Screen View Controller" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yar-zA-e4V">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="2oe-iy-bIq">
@@ -29,7 +29,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="e8d-6X-hCD">
-                                <rect key="frame" x="83.5" y="571" width="208" height="36"/>
+                                <rect key="frame" x="83.666666666666686" y="571" width="208" height="36"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Tap to start Basic Demo">
@@ -100,7 +100,7 @@
             <objects>
                 <viewController id="kCF-by-l2J" customClass="NearbyDemoViewController" customModule="Scavenge_AR_" customModuleProvider="target" sceneMemberID="viewController">
                     <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="vKW-ZJ-ly1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </arscnView>
                     <connections>
@@ -116,7 +116,7 @@
             <objects>
                 <viewController id="1PX-L6-LaT" customClass="BasicDemoViewController" customModule="Scavenge_AR_" customModuleProvider="target" sceneMemberID="viewController">
                     <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="kAy-VL-7mY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </arscnView>
                     <connections>
@@ -132,14 +132,14 @@
             <objects>
                 <viewController id="AOz-z2-QZh" customClass="CoarseRelocDemoViewController" customModule="Scavenge_AR_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3SI-bh-7i5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rxs-6U-jSo">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                             </arscnView>
                             <view contentMode="topRight" horizontalHuggingPriority="750" verticalHuggingPriority="750" placeholderIntrinsicWidth="150" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="oEd-hq-ZGA" userLabel="Sensor Status" customClass="SensorStatusView" customModule="Scavenge_AR_" customModuleProvider="target">
-                                <rect key="frame" x="225" y="0.0" width="150" height="100"/>
+                                <rect key="frame" x="278" y="44" width="150" height="100"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4LX-P4-bhu"/>
@@ -165,19 +165,19 @@
         <!--Create Anchor View Controller-->
         <scene sceneID="GKA-po-RNb">
             <objects>
-                <viewController id="hxj-XO-5le" customClass="CreateAnchorViewController" customModule="Scavenge_AR_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="hxj-XO-5le" customClass="CreateAnchorViewController" customModule="Scavenge_AR_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z21-u2-9ft">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgO-2u-nWb">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                             </arscnView>
                             <view contentMode="topRight" horizontalHuggingPriority="750" verticalHuggingPriority="750" placeholderIntrinsicWidth="150" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="y3D-98-zt9" userLabel="Sensor Status" customClass="SensorStatusView" customModule="Scavenge_AR_" customModuleProvider="target">
-                                <rect key="frame" x="225" y="0.0" width="150" height="100"/>
+                                <rect key="frame" x="225" y="44" width="150" height="100"/>
                             </view>
                             <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Anchor Name" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EkA-YN-Uyj">
-                                <rect key="frame" x="80" y="271" width="215" height="105"/>
+                                <rect key="frame" x="80" y="370" width="268" height="43"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
@@ -187,16 +187,15 @@
                         <viewLayoutGuide key="safeArea" id="aok-yF-H14"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="EkA-YN-Uyj" firstAttribute="centerX" secondItem="xgO-2u-nWb" secondAttribute="centerX" id="9IX-bU-27h"/>
-                            <constraint firstItem="xgO-2u-nWb" firstAttribute="centerX" secondItem="Z21-u2-9ft" secondAttribute="centerX" id="AVp-52-wUY"/>
-                            <constraint firstItem="EkA-YN-Uyj" firstAttribute="centerY" secondItem="xgO-2u-nWb" secondAttribute="centerY" id="HRK-TS-rLU"/>
-                            <constraint firstItem="xgO-2u-nWb" firstAttribute="top" secondItem="aok-yF-H14" secondAttribute="top" id="IP0-Bq-2Rw"/>
+                            <constraint firstItem="xgO-2u-nWb" firstAttribute="centerY" secondItem="Z21-u2-9ft" secondAttribute="centerY" id="8ah-nv-t3G"/>
                             <constraint firstItem="EkA-YN-Uyj" firstAttribute="leading" secondItem="aok-yF-H14" secondAttribute="leading" constant="80" id="JyM-03-B3c"/>
-                            <constraint firstItem="xgO-2u-nWb" firstAttribute="top" secondItem="y3D-98-zt9" secondAttribute="top" id="Nbl-d4-c1B"/>
                             <constraint firstItem="y3D-98-zt9" firstAttribute="leading" secondItem="aok-yF-H14" secondAttribute="leading" constant="225" id="Nx4-O4-OnG"/>
-                            <constraint firstItem="xgO-2u-nWb" firstAttribute="bottom" secondItem="aok-yF-H14" secondAttribute="bottom" id="UCW-l3-I5Y"/>
-                            <constraint firstItem="xgO-2u-nWb" firstAttribute="trailing" secondItem="y3D-98-zt9" secondAttribute="trailing" id="Zkw-cP-3rn"/>
-                            <constraint firstItem="aok-yF-H14" firstAttribute="bottom" secondItem="EkA-YN-Uyj" secondAttribute="bottom" constant="271" id="yLo-AC-nX8"/>
+                            <constraint firstItem="xgO-2u-nWb" firstAttribute="centerX" secondItem="EkA-YN-Uyj" secondAttribute="centerX" id="THv-2z-gDK"/>
+                            <constraint firstItem="xgO-2u-nWb" firstAttribute="top" secondItem="Z21-u2-9ft" secondAttribute="topMargin" constant="-44" id="bQA-cc-iru"/>
+                            <constraint firstItem="xgO-2u-nWb" firstAttribute="leading" secondItem="aok-yF-H14" secondAttribute="leading" id="c2Q-8z-00I"/>
+                            <constraint firstItem="xgO-2u-nWb" firstAttribute="centerX" secondItem="Z21-u2-9ft" secondAttribute="centerX" id="f3G-Jf-0j7"/>
+                            <constraint firstItem="y3D-98-zt9" firstAttribute="top" secondItem="aok-yF-H14" secondAttribute="top" id="hRJ-iY-WUB"/>
+                            <constraint firstItem="aok-yF-H14" firstAttribute="bottom" secondItem="EkA-YN-Uyj" secondAttribute="bottom" constant="479" id="yLo-AC-nX8"/>
                         </constraints>
                     </view>
                     <connections>
@@ -207,21 +206,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1G-FY-og6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1149.5999999999999" y="-1177.0614692653674"/>
+            <point key="canvasLocation" x="1149.5327102803737" y="-1177.3218142548596"/>
         </scene>
         <!--Scavenge View Controller-->
         <scene sceneID="Dhp-pR-7SS">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="FHa-EG-fXt" customClass="ScavengeViewController" customModule="Scavenge_AR_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m1s-4K-iYc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lJV-nZ-kIq">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                             </arscnView>
                             <view contentMode="topRight" horizontalHuggingPriority="750" verticalHuggingPriority="750" placeholderIntrinsicWidth="150" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="OYt-GQ-iSW" userLabel="Sensor Status" customClass="SensorStatusView" customModule="Scavenge_AR_" customModuleProvider="target">
-                                <rect key="frame" x="225" y="0.0" width="150" height="100"/>
+                                <rect key="frame" x="278" y="44" width="150" height="100"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Y6S-v7-Amb"/>

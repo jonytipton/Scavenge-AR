@@ -86,6 +86,9 @@ class CreateAnchorViewController: BaseViewController, UITextFieldDelegate {
         }
     }
 
+    /*
+     TODO: Custom shape input here
+     */
     override func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         super.renderer(renderer, updateAtTime: time)
         

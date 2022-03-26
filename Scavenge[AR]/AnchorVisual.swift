@@ -16,4 +16,5 @@ class AnchorVisual {
     var localAnchor : ARAnchor? = nil
     var anchorText : String
     var audioURL : String?
+//    Custom SCNNode shape here?
 }
