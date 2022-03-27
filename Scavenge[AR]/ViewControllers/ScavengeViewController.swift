@@ -12,10 +12,19 @@ class ScavengeViewController: BaseViewController {
     @IBOutlet var descriptionTextView: UITextView!
     
     @IBOutlet var dismissButton: UIButton!
+    
     @IBAction func onDismissTapped(_ sender: Any) {
-        print("DISMISS TAPPED. RESUME CLOUD SESSIONS")
-        dismissButton.isHidden = true
-        descriptionTextView.isHidden = true
+        print("DISMISS TAPPED")
+        if (descriptionTextList.isEmpty == true) {
+            print("No more items in description list. Hidding view.")
+            dismissButton.isHidden = true
+            descriptionTextView.isHidden = true
+        }
+        else {
+            print("Displaying next item in description list!")
+            descriptionTextView.text = descriptionTextList.removeFirst()
+        }
+        
     }
     /// Whether the "Access WiFi Information" capability is enabled.
     /// If available, the MAC address of the connected Wi-Fi access point can be used
@@ -39,6 +48,8 @@ class ScavengeViewController: BaseViewController {
     
     var resumedCloudSession :ASACloudSpatialAnchorSession? = nil
 
+    var descriptionTextList: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,17 +83,26 @@ class ScavengeViewController: BaseViewController {
         
         //resumedCloudSession = super.cloudSession
         //super.pauseSession()
-        descriptionTextView.isHidden = false
-        dismissButton.isHidden = false
+        
         //step = .stopWatcher //Activates on main button tap
         
-        if let anchorText: String = cloudAnchor.appProperties["anchor-name"] as? String {
-            descriptionTextView.text = anchorText
+        if let anchorText: String = cloudAnchor.appProperties["anchor-name"] as? String
+        {
+            print("Appending: \(cloudAnchor.appProperties["anchor-name"] ?? "ERROR: NO VALUE FOR APP PROPERTY 'anchor-name'")")
+            //Add anchor description to list
+            descriptionTextList.append(anchorText)
+            
+            if (descriptionTextView.isHidden == true) {
+                descriptionTextView.text = descriptionTextList.removeFirst()
+            }
         }
         else {
-            descriptionTextView.text = "NIL"
+            descriptionTextView.text = "ERROR: No value for anchor-name property!"
         }
-        print("test \(cloudAnchor.appProperties["anchor-name"])")
+        
+        //Display view
+        descriptionTextView.isHidden = false
+        dismissButton.isHidden = false
         
         DispatchQueue.main.async {
             self.numAnchorsFound += 1
@@ -167,7 +187,7 @@ class ScavengeViewController: BaseViewController {
 
     private func lookForAnchorsNearDevice() {
         let nearDevice = ASANearDeviceCriteria()!
-        nearDevice.distanceInMeters = 10
+        nearDevice.distanceInMeters = 1
         nearDevice.maxResultCount = 35
 
         let criteria = ASAAnchorLocateCriteria()!

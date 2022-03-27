@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -224,15 +223,6 @@
                             <view contentMode="topRight" horizontalHuggingPriority="750" verticalHuggingPriority="750" placeholderIntrinsicWidth="150" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="OYt-GQ-iSW" userLabel="Sensor Status" customClass="SensorStatusView" customModule="Scavenge_AR_" customModuleProvider="target">
                                 <rect key="frame" x="278" y="44" width="150" height="100"/>
                             </view>
-                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Anchor Attached Text Here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dnH-Xn-mnI">
-                                <rect key="frame" x="20" y="152" width="388" height="323"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="323" id="ohd-g4-iGv"/>
-                                </constraints>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEr-YE-taU">
                                 <rect key="frame" x="117" y="677" width="194" height="80"/>
                                 <constraints>
@@ -244,6 +234,16 @@
                                     <action selector="onDismissTapped:" destination="FHa-EG-fXt" eventType="touchUpInside" id="L7y-lS-bNH"/>
                                 </connections>
                             </button>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Anchor Attached Text Here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dnH-Xn-mnI">
+                                <rect key="frame" x="20" y="152" width="388" height="517"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="517" id="ohd-g4-iGv"/>
+                                </constraints>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Y6S-v7-Amb"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -275,9 +275,4 @@
             <point key="canvasLocation" x="1150.9345794392523" y="-1842.1166306695466"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

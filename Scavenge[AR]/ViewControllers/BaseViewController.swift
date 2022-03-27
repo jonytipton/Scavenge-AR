@@ -332,7 +332,7 @@ class BaseViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContact
     func lookForNearbyAnchors() {
         let criteria = ASAAnchorLocateCriteria()!
         let nearCriteria = ASANearAnchorCriteria()!
-        nearCriteria.distanceInMeters = 10
+        nearCriteria.distanceInMeters = 1
         nearCriteria.sourceAnchor = anchorVisuals[targetId!]!.cloudAnchor
         criteria.nearAnchor = nearCriteria
         cloudSession!.createWatcher(criteria)
