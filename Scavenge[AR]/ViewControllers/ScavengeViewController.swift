@@ -9,6 +9,14 @@ class ScavengeViewController: BaseViewController {
 
     @IBOutlet var sensorStatusView: SensorStatusView!
 
+    @IBOutlet var descriptionTextView: UITextView!
+    
+    @IBOutlet var dismissButton: UIButton!
+    @IBAction func onDismissTapped(_ sender: Any) {
+        print("DISMISS TAPPED. RESUME CLOUD SESSIONS")
+        dismissButton.isHidden = true
+        descriptionTextView.isHidden = true
+    }
     /// Whether the "Access WiFi Information" capability is enabled.
     /// If available, the MAC address of the connected Wi-Fi access point can be used
     /// to help find nearby anchors.
@@ -29,6 +37,7 @@ class ScavengeViewController: BaseViewController {
     var nearDeviceWatcher: ASACloudSpatialAnchorWatcher?
     var numAnchorsFound = 0 //Use for found score
     
+    var resumedCloudSession :ASACloudSpatialAnchorSession? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,16 +63,35 @@ class ScavengeViewController: BaseViewController {
         }
     }*/
 
+    /*
+     Going to assume anchors are spaced a few meters apart
+     User likely stopping when reading description then dismissing before reaching next anchor
+     */
     override func onNewAnchorLocated(_ cloudAnchor: ASACloudSpatialAnchor) {
-        ignoreMainButtonTaps = false
-        step = .stopWatcher //Activates on main button tap
-
+        ignoreMainButtonTaps = true
+        
+        //resumedCloudSession = super.cloudSession
+        //super.pauseSession()
+        descriptionTextView.isHidden = false
+        dismissButton.isHidden = false
+        //step = .stopWatcher //Activates on main button tap
+        
+        if let anchorText: String = cloudAnchor.appProperties["anchor-name"] as? String {
+            descriptionTextView.text = anchorText
+        }
+        else {
+            descriptionTextView.text = "NIL"
+        }
+        print("test \(cloudAnchor.appProperties["anchor-name"])")
+        
         DispatchQueue.main.async {
             self.numAnchorsFound += 1
             self.feedbackControl.isHidden = true
-            self.mainButton.setTitle("\(self.numAnchorsFound) anchor(s) found! Tap to stop watcher.", for: .normal)
+            self.mainButton.setTitle("\(self.numAnchorsFound) Pausing session. Found Anchor", for: .normal)
         }
     }
+    
+    
 
     override func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         super.renderer(renderer, updateAtTime: time)
@@ -131,10 +159,15 @@ class ScavengeViewController: BaseViewController {
     private func attachLocationProviderToSession() {
         cloudSession!.locationProvider = locationProvider
     }
+    
+    private func resumeSession() {
+        print("RESUME SESSION")
+        lookForAnchorsNearDevice()
+    }
 
     private func lookForAnchorsNearDevice() {
         let nearDevice = ASANearDeviceCriteria()!
-        nearDevice.distanceInMeters = 1.0
+        nearDevice.distanceInMeters = 10
         nearDevice.maxResultCount = 35
 
         let criteria = ASAAnchorLocateCriteria()!

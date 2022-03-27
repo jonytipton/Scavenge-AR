@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="2oe-iy-bIq">
-                                <rect key="frame" x="75" y="505" width="225" height="36"/>
+                                <rect key="frame" x="102" y="509" width="225" height="36"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Tap to start Nearby Demo">
@@ -29,7 +30,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="e8d-6X-hCD">
-                                <rect key="frame" x="83.666666666666686" y="571" width="208" height="36"/>
+                                <rect key="frame" x="110" y="575" width="209" height="36"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Tap to start Basic Demo">
@@ -41,7 +42,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.60000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Fgg-6E-Z19" userLabel="Tap to start Coarse Reloc Demo">
-                                <rect key="frame" x="49" y="439" width="277" height="36"/>
+                                <rect key="frame" x="76" y="443" width="277" height="36"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Tap to start Coarse Reloc Demo">
@@ -53,7 +54,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.60000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" id="PBY-2N-3mL" userLabel="Create">
-                                <rect key="frame" x="124" y="374" width="127" height="36"/>
+                                <rect key="frame" x="151" y="378" width="127" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -66,7 +67,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.60000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" id="nBG-84-sS5" userLabel="Scavenge">
-                                <rect key="frame" x="142" y="311" width="92" height="36"/>
+                                <rect key="frame" x="169" y="315" width="92" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -82,12 +83,13 @@
                         <viewLayoutGuide key="safeArea" id="e5z-WA-4z9"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Fgg-6E-Z19" firstAttribute="centerX" secondItem="PBY-2N-3mL" secondAttribute="centerX" id="CHr-Dd-Fs6"/>
-                            <constraint firstItem="e8d-6X-hCD" firstAttribute="top" secondItem="2oe-iy-bIq" secondAttribute="bottom" constant="30" id="bdx-iF-2OV"/>
-                            <constraint firstItem="2oe-iy-bIq" firstAttribute="top" secondItem="Fgg-6E-Z19" secondAttribute="bottom" constant="30" id="h8S-6W-SlI"/>
-                            <constraint firstItem="Fgg-6E-Z19" firstAttribute="centerX" secondItem="2oe-iy-bIq" secondAttribute="centerX" id="jWT-sg-8Xr"/>
-                            <constraint firstItem="Fgg-6E-Z19" firstAttribute="top" secondItem="PBY-2N-3mL" secondAttribute="bottom" constant="29" id="pbk-rB-Qfu"/>
-                            <constraint firstItem="2oe-iy-bIq" firstAttribute="centerX" secondItem="e8d-6X-hCD" secondAttribute="centerX" id="zxt-3z-CUM"/>
+                            <constraint firstItem="Fgg-6E-Z19" firstAttribute="top" secondItem="PBY-2N-3mL" secondAttribute="bottom" constant="29" id="0ks-X1-AVh"/>
+                            <constraint firstItem="e8d-6X-hCD" firstAttribute="leading" secondItem="e5z-WA-4z9" secondAttribute="leading" constant="110" id="CYl-0Z-XR6"/>
+                            <constraint firstItem="e8d-6X-hCD" firstAttribute="top" secondItem="2oe-iy-bIq" secondAttribute="bottom" constant="30" id="DqT-Ic-2wD"/>
+                            <constraint firstItem="Fgg-6E-Z19" firstAttribute="centerX" secondItem="PBY-2N-3mL" secondAttribute="centerX" id="Ife-LN-hcH"/>
+                            <constraint firstItem="2oe-iy-bIq" firstAttribute="top" secondItem="Fgg-6E-Z19" secondAttribute="bottom" constant="30" id="aCI-4x-BXh"/>
+                            <constraint firstItem="2oe-iy-bIq" firstAttribute="centerX" secondItem="e8d-6X-hCD" secondAttribute="centerX" id="jlg-t7-amL"/>
+                            <constraint firstItem="Fgg-6E-Z19" firstAttribute="centerX" secondItem="2oe-iy-bIq" secondAttribute="centerX" id="lvv-9D-60t"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -222,27 +224,60 @@
                             <view contentMode="topRight" horizontalHuggingPriority="750" verticalHuggingPriority="750" placeholderIntrinsicWidth="150" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="OYt-GQ-iSW" userLabel="Sensor Status" customClass="SensorStatusView" customModule="Scavenge_AR_" customModuleProvider="target">
                                 <rect key="frame" x="278" y="44" width="150" height="100"/>
                             </view>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Anchor Attached Text Here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dnH-Xn-mnI">
+                                <rect key="frame" x="20" y="152" width="388" height="323"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="323" id="ohd-g4-iGv"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEr-YE-taU">
+                                <rect key="frame" x="117" y="677" width="194" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="MRg-dt-wvB"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Dismiss"/>
+                                <connections>
+                                    <action selector="onDismissTapped:" destination="FHa-EG-fXt" eventType="touchUpInside" id="L7y-lS-bNH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Y6S-v7-Amb"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="dnH-Xn-mnI" firstAttribute="centerX" secondItem="lJV-nZ-kIq" secondAttribute="centerX" id="4UR-lg-gEB"/>
+                            <constraint firstItem="dnH-Xn-mnI" firstAttribute="centerX" secondItem="wEr-YE-taU" secondAttribute="centerX" id="83L-xM-0V6"/>
                             <constraint firstItem="lJV-nZ-kIq" firstAttribute="top" secondItem="m1s-4K-iYc" secondAttribute="top" id="CMc-kp-G4B"/>
+                            <constraint firstItem="dnH-Xn-mnI" firstAttribute="top" secondItem="OYt-GQ-iSW" secondAttribute="bottom" constant="8" id="O8q-wp-cGE"/>
+                            <constraint firstItem="Y6S-v7-Amb" firstAttribute="bottom" secondItem="wEr-YE-taU" secondAttribute="bottom" constant="135" id="OL1-zM-23E"/>
                             <constraint firstItem="lJV-nZ-kIq" firstAttribute="leading" secondItem="m1s-4K-iYc" secondAttribute="leading" id="TCp-6K-3hp"/>
                             <constraint firstItem="lJV-nZ-kIq" firstAttribute="bottom" secondItem="m1s-4K-iYc" secondAttribute="bottom" id="Yje-I2-fZT"/>
                             <constraint firstItem="OYt-GQ-iSW" firstAttribute="top" secondItem="Y6S-v7-Amb" secondAttribute="top" id="Zay-Vw-S7A"/>
+                            <constraint firstItem="dnH-Xn-mnI" firstAttribute="leading" secondItem="m1s-4K-iYc" secondAttribute="leadingMargin" id="d2F-XT-laR"/>
                             <constraint firstItem="OYt-GQ-iSW" firstAttribute="trailing" secondItem="Y6S-v7-Amb" secondAttribute="trailing" id="dQn-g7-ULr"/>
                             <constraint firstItem="lJV-nZ-kIq" firstAttribute="trailing" secondItem="m1s-4K-iYc" secondAttribute="trailing" id="dnF-CF-G5Z"/>
+                            <constraint firstItem="wEr-YE-taU" firstAttribute="leading" secondItem="Y6S-v7-Amb" secondAttribute="leading" constant="117" id="qcm-y4-wsO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Z4g-vw-F6Q"/>
                     <connections>
+                        <outlet property="descriptionTextView" destination="dnH-Xn-mnI" id="8bO-7a-6Wg"/>
+                        <outlet property="dismissButton" destination="wEr-YE-taU" id="IGI-NK-PUt"/>
                         <outlet property="sceneView" destination="lJV-nZ-kIq" id="j5O-4S-PrO"/>
                         <outlet property="sensorStatusView" destination="OYt-GQ-iSW" id="m2R-Sk-bGi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q7U-0g-K6D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1151" y="-1842"/>
+            <point key="canvasLocation" x="1150.9345794392523" y="-1842.1166306695466"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

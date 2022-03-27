@@ -232,7 +232,6 @@ class BaseViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContact
         cloudSession!.configuration.accountKey = spatialAnchorsAccountKey
         cloudSession!.configuration.accountDomain = spatialAnchorsAccountDomain
         cloudSession!.start()
-        
         feedbackControl.isHidden = false
         errorControl.isHidden = true
         enoughDataForSaving = false
@@ -310,6 +309,17 @@ class BaseViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContact
         
         anchorVisuals.removeAll()
     }
+    
+    /*
+    func pauseSession() {
+        if let cloudSession = cloudSession {
+            cloudSession.stop()
+            //cloudSession.stop() //Cannot resume locate session if stopped
+            print("STOP CLOUD SESSION")
+        }
+    }*/
+    
+    
     
     func lookForAnchor() {
         let ids = [targetId!]
